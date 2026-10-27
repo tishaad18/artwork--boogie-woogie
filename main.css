@@ -1,0 +1,1103 @@
+/* -----------------------------------
+   GLOBAL
+----------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  background: #111;
+  color: #111;
+
+  font-family: "Josefin Sans", sans-serif;
+}
+
+
+/* -----------------------------------
+   COLOR VARIABLES
+----------------------------------- */
+
+:root {
+
+  --white: #f4f1e8;
+
+  --yellow: #f4d000;
+
+  --red: #d9271c;
+
+  --blue: #1649aa;
+
+  --black: #111111;
+
+}
+
+
+/* -----------------------------------
+   MAIN GRID
+----------------------------------- */
+
+.mondrian-grid {
+
+  width: min(1500px, 100%);
+
+  margin: 0 auto;
+
+  background: var(--black);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(12, 1fr);
+
+  grid-auto-rows: minmax(70px, auto);
+
+  gap: 8px;
+
+  padding: 8px;
+
+}
+
+
+/* -----------------------------------
+   SHARED BLOCK
+----------------------------------- */
+
+.block {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 32px;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+
+}
+
+
+.block:hover {
+
+  z-index: 5;
+
+}
+
+
+/* -----------------------------------
+   TYPOGRAPHY
+----------------------------------- */
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+
+h1 {
+
+  margin-bottom: 30px;
+
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(5rem, 9vw, 10rem);
+
+  line-height: 0.72;
+
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+}
+
+
+h2 {
+
+  margin-bottom: 25px;
+
+  font-family: "Lexend", sans-serif;
+
+  font-weight: 750;
+
+  font-size:
+    clamp(2rem, 4vw, 5rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+
+}
+
+
+p {
+
+  margin-bottom: 20px;
+
+  max-width: 520px;
+
+  font-size: 1.15rem;
+
+  line-height: 1.45;
+
+  font-weight: 400;
+
+}
+
+
+.section-label {
+
+  margin-bottom: 25px;
+
+  font-family: "Lexend", sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+}
+
+
+.eyebrow {
+
+  margin-bottom: 20px;
+
+  font-family: "Lexend", sans-serif;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+}
+
+
+.year {
+
+  font-family: "Lexend", sans-serif;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+}
+
+
+.large-copy {
+
+  font-size:
+    clamp(2rem, 4vw, 4rem);
+
+  font-weight: 600;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+
+}
+
+
+/* -----------------------------------
+   TITLE
+----------------------------------- */
+
+.title-block {
+
+  grid-column: 1 / 9;
+
+  grid-row: span 7;
+
+  min-height: 700px;
+
+  background: var(--white);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+.title-block h1 {
+
+  max-width: 850px;
+
+}
+
+
+/* -----------------------------------
+   TOP YELLOW SQUARE
+----------------------------------- */
+
+.yellow-square {
+
+  grid-column: 9 / 13;
+
+  grid-row: span 3;
+
+  min-height: 280px;
+
+  background: var(--yellow);
+
+}
+
+
+/* -----------------------------------
+   INTRO
+----------------------------------- */
+
+.intro-block {
+
+  grid-column: 9 / 13;
+
+  grid-row: span 4;
+
+  background: var(--white);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+}
+
+
+/* -----------------------------------
+   RED BLOCK
+----------------------------------- */
+
+.red-block {
+
+  grid-column: 1 / 4;
+
+  grid-row: span 4;
+
+  min-height: 400px;
+
+  background: var(--red);
+
+  color: var(--white);
+
+  display: flex;
+
+  align-items: flex-end;
+
+}
+
+
+.red-block span {
+
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-size: clamp(5rem, 10vw, 10rem);
+
+  line-height: 0.7;
+
+}
+
+
+/* -----------------------------------
+   ARTIST
+----------------------------------- */
+
+.artist-block {
+
+  grid-column: 4 / 10;
+
+  grid-row: span 4;
+
+  background: var(--white);
+
+}
+
+
+/* -----------------------------------
+   BLUE SQUARE
+----------------------------------- */
+
+.blue-square {
+
+  grid-column: 10 / 13;
+
+  grid-row: span 4;
+
+  min-height: 400px;
+
+  background: var(--blue);
+
+}
+
+
+/* -----------------------------------
+   RHYTHM
+----------------------------------- */
+
+.rhythm-block {
+  grid-column: 1 / 8;
+  grid-row: span 5;
+
+  min-height: 620px;
+
+  background: var(--yellow);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.giant-word {
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-weight: 400;
+
+  font-size: clamp(6rem, 13vw, 13rem);
+
+  line-height: 1;
+
+  margin: 0 0 80px 0;
+
+  display: block;
+}
+
+
+/* -----------------------------------
+   YELLOW TEXT STRIP
+----------------------------------- */
+
+.yellow-strip {
+
+  grid-column: 8 / 13;
+
+  grid-row: span 5;
+
+  background: var(--white);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+}
+
+
+.yellow-strip span {
+
+  display: block;
+
+  font-family: "Lexend", sans-serif;
+
+  font-weight: 800;
+
+  font-size:
+    clamp(1.8rem, 3vw, 4rem);
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+}
+
+
+.yellow-strip span:nth-child(2) {
+  text-align: right;
+}
+
+
+.yellow-strip span:nth-child(4) {
+  text-align: right;
+}
+
+
+/* -----------------------------------
+   CITY
+----------------------------------- */
+
+.city-block {
+
+  grid-column: 1 / 7;
+
+  grid-row: span 6;
+
+  min-height: 620px;
+
+  background: var(--white);
+
+}
+
+
+.statement {
+
+  font-family: "Lexend", sans-serif;
+
+  font-weight: 850;
+
+  font-size:
+    clamp(3rem, 7vw, 7rem);
+
+  line-height: 0.8;
+
+  letter-spacing: -0.08em;
+
+}
+
+
+/* -----------------------------------
+   SMALL RED
+----------------------------------- */
+
+.red-small {
+
+  grid-column: 7 / 9;
+
+  grid-row: span 2;
+
+  background: var(--red);
+
+}
+
+
+/* -----------------------------------
+   NO BLACK
+----------------------------------- */
+
+.black-block {
+
+  grid-column: 9 / 13;
+
+  grid-row: span 6;
+
+  background: var(--yellow);
+
+}
+
+
+.black-block h2 {
+
+  font-size:
+    clamp(4rem, 8vw, 9rem);
+
+}
+
+
+/* -----------------------------------
+   BLUE WIDE
+----------------------------------- */
+
+.blue-wide {
+
+  grid-column: 7 / 9;
+
+  grid-row: span 4;
+
+  background: var(--blue);
+
+  color: var(--white);
+
+  writing-mode: vertical-rl;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.blue-wide span {
+
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-size: 6rem;
+
+}
+
+
+/* -----------------------------------
+   TRAFFIC
+----------------------------------- */
+
+.traffic-block {
+
+  grid-column: 1 / 9;
+
+  grid-row: span 6;
+
+  min-height: 650px;
+
+  background: var(--red);
+
+  color: var(--white);
+
+}
+
+
+.traffic-block h2 {
+
+  font-size:
+    clamp(3rem, 6vw, 7rem);
+
+}
+
+
+/* -----------------------------------
+   MINI YELLOW
+----------------------------------- */
+
+.mini-yellow {
+
+  grid-column: 9 / 13;
+
+  grid-row: span 2;
+
+  background: var(--yellow);
+
+}
+
+
+/* -----------------------------------
+   VISUAL LANGUAGE
+----------------------------------- */
+
+.language-block {
+
+  grid-column: 9 / 13;
+
+  grid-row: span 4;
+
+  background: var(--white);
+
+}
+
+
+.word-stack {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+}
+
+
+.word-stack span {
+
+  font-family: "Lexend", sans-serif;
+
+  font-size:
+    clamp(1.8rem, 3.5vw, 4rem);
+
+  font-weight: 800;
+
+  letter-spacing: -0.06em;
+
+  line-height: 0.95;
+
+}
+
+
+/* -----------------------------------
+   RED TALL
+----------------------------------- */
+
+.red-tall {
+
+  grid-column: 1 / 3;
+
+  grid-row: span 6;
+
+  background: var(--red);
+
+  color: var(--white);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+}
+
+
+.red-tall span {
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-size: 8rem;
+
+}
+
+
+/* -----------------------------------
+   DETAILS
+----------------------------------- */
+
+.details-block {
+
+  grid-column: 3 / 8;
+
+  grid-row: span 6;
+
+  background: var(--white);
+
+}
+
+
+.details {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px 35px;
+
+}
+
+
+.details p {
+
+  font-size: 1rem;
+
+}
+
+
+.details strong {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-family: "Lexend", sans-serif;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* -----------------------------------
+   INTERPRETATION
+----------------------------------- */
+
+.interpretation-block {
+
+  grid-column: 8 / 13;
+
+  grid-row: span 6;
+
+  background: var(--yellow);
+
+}
+
+
+/* -----------------------------------
+   FINAL BLUE
+----------------------------------- */
+
+.final-blue {
+
+  grid-column: 1 / 5;
+
+  grid-row: span 4;
+
+  min-height: 360px;
+
+  background: var(--blue);
+
+  color: var(--white);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.final-blue span {
+
+  font-family: "Micro 5 Charted", sans-serif;
+
+  font-size:
+    clamp(6rem, 12vw, 12rem);
+
+}
+
+
+/* -----------------------------------
+   FINAL
+----------------------------------- */
+
+.final-block {
+
+  grid-column: 5 / 13;
+
+  grid-row: span 4;
+
+  min-height: 360px;
+
+  background: var(--white);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+}
+
+
+.final-block h2 {
+
+  font-size:
+    clamp(3rem, 7vw, 8rem);
+
+}
+
+
+.small-text {
+
+  font-family: "Lexend", sans-serif;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+}
+
+
+.bottom-text {
+
+  align-self: flex-end;
+
+  text-align: right;
+
+}
+
+
+/* -----------------------------------
+   HOVER INTERACTIONS
+----------------------------------- */
+
+.yellow-square:hover,
+.red-small:hover,
+.mini-yellow:hover {
+
+  transform: scale(0.94);
+
+}
+
+
+.blue-square:hover,
+.blue-wide:hover,
+.final-blue:hover {
+
+  filter: brightness(1.2);
+
+}
+
+
+.red-block:hover,
+.red-tall:hover,
+.traffic-block:hover {
+
+  filter: saturate(1.3);
+
+}
+
+
+.title-block:hover h1 {
+
+  letter-spacing: 0.02em;
+
+}
+
+
+.rhythm-block:hover .giant-word {
+
+  transform: translateX(12px);
+
+}
+
+
+.giant-word {
+
+  transition: transform 0.25s ease;
+
+}
+
+
+/* -----------------------------------
+   TABLET
+----------------------------------- */
+
+@media (max-width: 900px) {
+
+  .mondrian-grid {
+
+    grid-template-columns:
+      repeat(6, 1fr);
+
+  }
+
+
+  .title-block,
+  .artist-block,
+  .rhythm-block,
+  .city-block,
+  .traffic-block,
+  .details-block,
+  .final-block {
+
+    grid-column: 1 / 7;
+
+  }
+
+
+  .yellow-square {
+
+    grid-column: 1 / 3;
+
+  }
+
+
+  .intro-block {
+
+    grid-column: 3 / 7;
+
+  }
+
+
+  .red-block {
+
+    grid-column: 1 / 4;
+
+  }
+
+
+  .blue-square {
+
+    grid-column: 4 / 7;
+
+  }
+
+
+  .yellow-strip {
+
+    grid-column: 1 / 7;
+
+  }
+
+
+  .yellow-strip {
+
+    min-height: 350px;
+
+  }
+
+
+  .red-small {
+
+    grid-column: 1 / 3;
+
+  }
+
+
+  .black-block {
+
+    grid-column: 3 / 7;
+
+  }
+
+
+  .blue-wide {
+
+    grid-column: 1 / 3;
+
+  }
+
+
+  .mini-yellow {
+
+    grid-column: 1 / 3;
+
+  }
+
+
+  .language-block {
+
+    grid-column: 3 / 7;
+
+  }
+
+
+  .red-tall {
+
+    grid-column: 1 / 3;
+
+  }
+
+
+  .interpretation-block {
+
+    grid-column: 3 / 7;
+
+  }
+
+
+  .final-blue {
+
+    grid-column: 1 / 7;
+
+  }
+
+}
+
+
+/* -----------------------------------
+   MOBILE
+----------------------------------- */
+
+@media (max-width: 600px) {
+
+  .mondrian-grid {
+
+    display: block;
+
+    padding: 6px;
+
+  }
+
+
+  .block {
+
+    margin-bottom: 6px;
+
+    padding: 25px;
+
+  }
+
+
+  .title-block {
+
+    min-height: 620px;
+
+  }
+
+
+  .yellow-square {
+
+    height: 160px;
+
+  }
+
+
+  .red-block {
+
+    min-height: 300px;
+
+  }
+
+
+  .blue-square {
+
+    min-height: 220px;
+
+  }
+
+
+  .red-small,
+  .mini-yellow {
+
+    height: 120px;
+
+  }
+
+
+  .blue-wide {
+
+    min-height: 220px;
+
+    writing-mode: horizontal-tb;
+
+  }
+
+
+  .blue-wide span {
+
+    font-size: 5rem;
+
+  }
+
+
+  .red-tall {
+
+    min-height: 300px;
+
+  }
+
+
+  .red-tall span {
+
+    writing-mode: horizontal-tb;
+
+    transform: none;
+
+  }
+
+
+  .details {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .final-blue {
+
+    min-height: 300px;
+
+  }
+
+
+  p {
+
+    font-size: 1.05rem;
+
+  }
+
+}
